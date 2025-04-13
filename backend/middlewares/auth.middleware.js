@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken'
 import employeeService from '../services/employee.service.js';
 //A function to verify the token recieved from the frontend
 const verifyToken=async(req,res,next)=>{
-    let token =req.headers('x-access-token');
+    let token = req.headers['x-access-token'];
     if(!token){
         return res.status(403).send({
             status:"Fail",
