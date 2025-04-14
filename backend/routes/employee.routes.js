@@ -8,6 +8,7 @@ import employeeController from '../controllers/employee.controller.js';
 import authMiddleware  from "../middlewares/auth.middleware.js";
 // Create a route to handle the add employee request on post
 router.post("/api/employee", [authMiddleware.verifyToken, authMiddleware.isAdmin], employeeController.createEmployee);
-// Export the router
+// Create a route to handle the get all employees request on get
+router.get("/api/employees", [authMiddleware.verifyToken, authMiddleware.isAdmin], employeeController.getAllEmployees);
 // Export the router
 export default router;
